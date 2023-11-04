@@ -1,0 +1,241 @@
+#import 'package:flutter/material.dart';
+import package:travel_app/componenets/travelcard.dart';
+void main f runApp(MaterialApp(
+debugShowCheckedModeBanner: false,
+home: TravelApp(),
+); }
+class TravelApp extends StatefulWidget { @override
+_TravelAppState createState >= _TravelAppState(); }
+class _TravelAppState extends State<TravelApp> { List<String> urls =[
+"https://resofrance.eu/wp-content/uploads/2018/09/hotel-luxe-mandarin-oriental-paris.jpg",
+"https://h3.googleusercontent.com/proxy/wTkD1USQGpbVXzZFNLCZBDCL10QS1bFzSg Pa44cHwihea Y9DpoqMdNjBgEJcCIZSQeSkCO- 295gfuhtnuz4cDhtpansOcWos093YsGvogdQqWnpWIA",
+"https://images.squarespace- cdn.com/content/v1/57d5245815d5db80eadeef3b/1558864684068-
+1CX3SZOSFYZAIDFJSCYD/ke17ZwdGBTodd18pDm48kIpXjvpiLxnd0TWe793Q1fcUqsx RUqqbrImOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVY×CRW4BP
+
+ u10St3TBAUQYVKcZwk0euuUA52dtKj-h3u7rSTnusqQy- uHttizqk_avnQ5Fuy2HU38XlezBtUAcHK/Marataba+Safari+lodge",
+https://1h3.googleusercontent.com/proxy/ovCSxeucYYoir_iZdSYq8FfCHPeot491bYqlk7nX s7sXjqAfbZ2uw_19vLT85LwIZiGSnXuqkdbQ_×KFhd91M7Y05G94d",
+"https://q- xx.bstatic.com/data/images/hotel/max500/216968639.jpg?k=a65c7ca7141416ffec244cbc11
+75bf3bae188d1b4919d5fb294fab5ec&ee2fd2&0=", "https://hubinstitute.com/sites/default/files/styles/1200x500_crop/public/2018-06/photo-
+1439130490301-25322d88054.jpeg?h=f720410d&itok=HI5-oD_g",
+https://cdn.contexttravel.com/image/upload/c_fill,q_60,w_2600/v1549318570/production/cit y/hero_image_2_1549318566.jpg",
+"https://www.shieldsgazette.com/images- i.jpimedia.uk/imagefetch/https://jpgreatcontent.co.uk/wp-content/uploads/2020/04/spain.jpg",
+"https://www.telegraph.co.uk/content/dam/Travel/2017/November/tunisia-sidi-bou- GettyImages-575664325.jpg",
+"https://lp-cms-production.imgix.net/features/2018/06/byrsa-hill-carthage-tunis-tunisia- 2d96efe7b9bf.jpg"
+//sometime we can face some http request erreur fi the owner of the picture delted it or the url is not available
+@override
+Widget build(BuildContext context) { return Scaffold(
+backgroundColor: Color (OxFFF6F7FF), appBar: AppBar(
+elevation: 0.0,
+backgroundColor: Color(OxFFF6F7FF), title: Row(
+children: [ IconButton(
+onPressed: ( 0 } , icon: Icon(
+
+ Icons.menu,
+color: Colors.black,
+), ),
+,] ),
+),
+body: Padding(
+padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0), child: Column(
+main AxisAlignment: MainAxis Alignment.start,
+cross AxisAlignment: CrossAxisAlignment.start, children: [
+/Let's start by adding the text Text
+"Helo, Arthi!", style: TextStyle(
+color: Colors.black,
+fontSize: 26.0,
+font Weight: FontWeight.w600,
+), ),
+Text
+"Pcik your destination",
+style: TextStyle(
+color: Colors.black,
+fontSize: 20.0,
+font Weight: Font Weight.w300,
+), ),
+SizedBox height: 20.0,
+),
+/Now let's add some elevation to our text field
+
+ //to do this we need to wrap it in a Material widget Material(
+elevation: 10.0,
+borderRadius: BorderRadius.circular (30.0), shadowColor: Color (0x55434343),
+child: TextField(
+textAlign: TextAlign.start,
+textAlign Vertical: TextAlign Vertical.center, decoration: InputDecoration
+hintText: "Search for Hotel, Flight...", prefixIcon: Icon(
+Icons.search,
+color: Colors.black54,
+),
+border: InputBorder.none,
+), ),
+SizedBox (height: 30.0),
+//Now let's Add a Tabulation bar DefaultTabController
+length: 3,
+child: Expanded
+child: Column( children: [
+TabBar(
+indicatorColor: Color(0xFFFE8C68), unselectedLabelColor: Color(0xFF555555), labelColor: Color(0xFFFE8C68),
+labelPadding: EdgeInsets.symmetric(horizontal: 8.0), tabs: [
+Tabl
+text: "Trending",
+
+ Tabl
+text: "Promotion",
+), Tabl
+text: "Favorites", ),
+], ,)
+SizedBox height: 20.0,
+), Container(
+height: 300.0,
+child: TabBarView(
+children: [
+/Now let's create our first tab page Container(
+child: ListView(
+scrollDirection: Axishorizontal, children: [
+/Now let's add and test our first card travelCard(
+urls[0], "Luxary Hotel", "Caroline", 3), travelCard(urls[5], "Plaza Hotel", "Italy", 4,) travelCard(
+urls[2], "Safari Hotel", "Africa", 5), ],
+),
+), Container
+child: ListView(
+scroliDirection: Axis.horizontal, children: [
+//Here you can add what ever you want
+
+ travelCardurls[6], "Visit Rome", "Italy", 4), travelCard(urls[8], "Visit Sidi bou Said",
+"Tunsia", 4,) ],
+), ),
+Container(
+child: ListView(
+scrollDirection: Axis.horizontal, children: D],
+), ),
+],
+), ),
+],
+), ),
+,) ),
+bottomNavigationBar: BottomNavigationBar unselectedItemColor: Color(0xFFB7B7B7),
+selectedItemColor: Color (0xFFFE8C68), items: [
+BottomNavigationBarItem
+icon: Icon(Icons.home),
+title: Text("Home"), ),
+BottomNavigationBarItem icon: Icon(Icons.bookmark),
+title: Text("BookMark"), ),
+
+ BottomNavigationBarItem icon: Icon(Icons.location_on),
+title: Text("Destination"), ),
+BottomNavigationBarltem icon: Icon(Icons.notifications),
+title: Text("Notification"), ),
+),
+); }
+}
+/Now we will create our custom widget card import 'package:flutter/material.dart';
+Widget travelCard(
+String imgUrl, String hotelName, String location, int rating) { return Card(
+margin: EdgeInsets.only (right: 22.0), clipBehavior: Clip.anti Alias,
+shape: RoundedRectangleBorder
+borderRadius: BorderRadius.circular(30.0), ),
+elevation: 0.0, child: InkWell
+onTap: ( (}, child: Container(
+decoration: BoxDecoration( image: DecorationImage(
+image: NetworkImage(imgUrl), fit: BoxFit.cover,
+scale: 2.0,
+
+ )),
+width: 200.0, child: Padding(
+padding: EdgeInsets.all(12.0), child: Column(
+mainAxisAlignment: MainAxisAlignment.start,
+crossAxis Alignment: CrossAxisAlignment.start, children: [
+Row( children: [
+//this loop wil allow us to add as many star as the rating for (var i=0; i <rating; i++)
+Icon(
+Icons.star,
+color: Color(0×FFFE8C68),
+), ],
+), Expanded
+child: Column(
+mainAxisAlignment: MainAxisAlignment.end,
+cross AxisAlignment: CrossAxisAlignment.start, children: [
+Text
+hotelName, style: TextStyle(
+color: Colors. white,
+fontSize: 22.0,
+font Weight: Font Weight.w800,
+), ),
+SizedBox
+height: 3.0, ),
+
+ ), ),
+,] ),
+,) ],
+), ),
+),
+),
+)
+
+Account Creation:-
+
+from tkinter import *
+from tkinter import tk
+n=Tk(
+n.title("ACCOUNT CREATION_
+n.geometry ("700×500") n.configure(bg="#FFA07A")
+var 1=StringVar) var2=String Var) var3=StringVar)
+BOOK YOUR HOTEL")
+ACCOUNT CREATION
+
+ var4-String Var)
+var5=String Var) var6=String Var(
+num=IntVar)
+Il=Label(n,text="FIRST NAME", bg="#FF0000", fg=White)'. grid(row=0,pady=10,sticky=W
+12=Label(n,text="LAST NAME",bg="#FF0000", fg='White'). grid(row=1,pady=10,sticky=W) 13=Label(n,text="DATE OF
+BIRTH",bg="#FF0000", gf= White'). grid(row=2,pady=10,sticky=W) 14=Label(n,text="EMAIL ID",bg="#FF0000", fg='White'). grid(row=3,pady=10,sticky=W) 15=Label(n,text="MOBILE
+NUMBER",bg="#FF0000",fg="White').grid(row =4,pady=10,sticky=W) 16=Label(n,text="GENDER",bg="#FF0000", fg='White').grid(row=5,sticky=W) 17=Label(n,text="ADDRESS",bg="#FF0000", fg='White').grid(row=7,pady=10,sticky=W) 19-Label(n,text="CITY",bg="#FF0000", fg='White').grid(row=9,pady=10,sticky=W) 110=Label(n,text="PIN CODE",bg="#FF0000",fg='White').grid(row=10,pady=10,sticky=W) 111=Label(n,text="STATE",bg="#FF0000",fg='White').grid(row=11,pady=10,sticky=W) 112=Label(n,text="COUNTRY",bg="#FF0000",fg='White').grid(row=12,pady=10,sticky=W )
+el=Entry(n,textvariable=var 1).grid(row=0,padx=10,column=1,sticky=W) e2=Entry(n,textvariable=var2).grid(row=1,padx=10,column=1,sticky=W) e61=Radiobutton(n,text="Male", variable=num,value=1,bg="#1E1E1E",fg='White' justify="1 eft",selectcolor='dark grey).grid(row=5,column=1,sticky=W,padx=2) e62=Radiobutton(n,text="Female", variable=num, value=2,bg="#11E1E",fg='White',selectco lor='dark grey').grid(row=5,column=1,sticky=E) e4=Entry(n,textvariable=var3).grid(row=3,padx=10,column=1,sticky=W) e5=Entry(n,textvariable=var4).grid(row=4,padx=10,column=1,sticky=W) e6=Entry(n,textvariable=var5).grid(row=7,padx=10,rowspan=3,sticky=W,column=1) e7=Entry(n,textvariable=var6).grid(row=7,padx=10,ipady=20,column=1,sticky=W )
+mon=String Va r
+
+ num_day=String Var(
+yrs=String Var)
+day=ttk.Combobox(n, width=3,textvariable=num_day)
+month=ttk.Combobox (n, width=9,textvariable=mon)
+year=ttk.Combobox(n, width=8,textvariable=yrs) day'values']=(Day:;1';2;3,4,5,6,7,8,9';10, 11,12',13';14,15',16;17, 18',19';20,21' ,22,23',24, 25, 26, 27,28,29',30',31) day.grid(row=2,column=1,padx=1,sticky=W,ipadx=10)
+day.current(0)
+month['values']=(Month:'January', February', March', April, May,' June', July', 'August', 'Septe mber','October, 'November', December')
+month.grid(row=2,column=1,padx=1,sticky=E)
+month.current(0)
+year['values']=(Year:', 1990', 1991', 1992', 1993', 1994', 1995',;1996', 1997'; 1998', 1999', 2000'
+,2001, 2002', 2003', 2004', 2005'; 2006', 2007';2008, 2009', 2010, 2011;2012;2013', 2014;2 015', 2016;2017'; 2018, 2019, 2020'; 2021'; 2022')
+year.grid(row=2,column=2,padx=2,sticky=W) year.current(0)
+v=StringVar(
+chl=IntVar( ch2=IntVar) ch3=IntVar) ch4=IntVar) ch5=IntVar)
+vall=String Var) val2=String Var) val3=String Var) val4=String Var)
+e9=Entry(n,textvariable=val1).grid(row=9,padx=10,column=1,sticky=W) e10-Entry (n,textvariable=val2).grid(row=10,padx=10,column=1,sticky=W) e11=Entry(n,textvariable=val3).grid(row=11,padx=10,column=1,sticky=W) e12=Entry(n,textvariable=val4).grid(row=12,padx=10,column=1,sticky=W)
+
+ Label(n,text='(max 30 characters a-z and A- Z),bg="#1E1E1E",fg='White').grid(row=11,column=2,sticky=W,pady=10) Label(n,text='(max 30 characters a-z and A- Z),bg="#1EIE1E",fg='White).grid(row=0,pady=10,sticky=W,column=2) Label(n,text='(max 30 characters a-z and A-
+Z),bg="#1E1E1E",fg='White).grid(row=1,pady=10,sticky=W,column=2)
+Label(n,text= (10 digit number),bg="#11E1E",fg='White').grid(row=4,pady=10,sticky=W,column=2) Label(n,text='(max 30 characters a-z and A-
+Z),bg="#1EIE1E",fg=White). grid(row =9,pady=10,sticky=W,column=2) Label(n,text='(10 digit number),bg="#1E1E1E",fg="White').grid(row=10,pady=10,sticky=W,column=2) Label(n,text='(max 30 characters a-z and A- Z),bg="#11E1E",fg='White').grid(row=12,pady=10,sticky=W,column=2)
+submit=Button(n,text="SUBMIT",command=n.destroy).grid(row=22,column=2,sticky=W,pa dx=2)
+reset-Button(n,text="RESET",command-n.destroy).grid(row=22,column=2,sticky=E,padx= 2)
+exit=Button(n,text=" EXIT ",command=n.quit).grid(row =40,column=2,sticky=S,padx=2) n.mainloop()
+
+Login:-
+
+from tkinter import * zu =Tk(
+zu.title('Login Page)
+zu.geometry (*250x300') zu.configure(bg='#dddddd)
+frame 1_882 = Label(zu, bg='#dddddd') frame1_882.pack()
+LOGIN
+
+ frame2_882 = LabelFrame(frame1_882, text='Gender', padx=30, pady=10) var =IntVar)
+cb = IntVar)
+Label(frame 1_882,text="BOOK YOUR HOTEL").grid(row=0, column=2, padx=5, pady=5) Label(frame 1_882,text='(only 0-9 are allowed)).grid(row=3, column=3, padx=5,pady=5) Label(frame 1_882, text=Mobile Number').grid(row=3, column=0, padx=5, pady=5) Label(frame1_882, text= Email).grid(row=4, column=0, padx=5, pady=)
+Label(frame 1_882, text= Password).grid(row=5, column=0, padx=5, pady=5)
+name_Tf = Entry (frame 1_882)
+name_Tf.grid(row=3, column=2)
+Entry (frame1_882).grid(row=4, column=2)
+Entry (frame1_882, show="*').grid(row=5, column=2)
+frame2_882.grid(row=5, columnspan=3,padx=30)
+Checkbutton(frame1_882, text='Click fi you are not a Robot!', variable=cb, onvalue=1, offvalue=0).grid(row=6, columnspan=5, pady=5)
+submit_btn =Button(frame 1_882, text="SUBMIT", padx=50, pady=5) submit_btn.grid(row=7, columnspan=5, pady=2)
+exit=Button(frame1_882,text=" EXIT ",command=zu.quit, padx=55, pady=5) exit.grid(row=9, columnspan=5, pady=2)
+zu.mainloop()
